@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#VAIBHAV WAGH IS A STUDENT
+# awgh is pro devloper
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
