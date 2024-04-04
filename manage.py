@@ -5,6 +5,7 @@ import os
 import sys
 
 # wagh 25LPA
+# thorat 30 LPA
 
 
 def main():
