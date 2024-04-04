@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 #thorat is great
+#thorats luck
 import os
 import sys
 
