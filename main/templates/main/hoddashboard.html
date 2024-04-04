@@ -1,0 +1,67 @@
+{% extends 'hodindex.html' %} 
+{% block content %}
+    <style>
+        /* CSS Styles */
+        body {
+            background-color: #f4f4f4; /* Light grey background color */
+            font-family: 'Arial', sans-serif; /* Font family */
+            padding: 20px; /* Add padding to the body */
+        }
+
+        .container {
+            max-width: 800px; /* Limit width of content */
+            margin: 0 auto; /* Center content horizontally */
+            background-color: #fff; /* White background color */
+            padding: 30px; /* Add padding inside container */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        h1 {
+            color: #333; /* Dark grey color for headings */
+            text-align: center; /* Center-align heading */
+            margin-bottom: 20px; /* Add space below heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+        }
+
+        h2 {
+            color: #0066cc; /* Blue color for HOD's name */
+            text-align: center; /* Center-align HOD's name */
+            margin-top: 30px; /* Add space above HOD's name */
+        }
+
+        p {
+            color: #666; /* Medium grey color for text */
+            text-align: center; /* Center-align text */
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block; /* Make button inline */
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Add padding inside button */
+            text-align: center; /* Center-align text */
+            text-decoration: none; /* Remove default underline */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Show pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .btn:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+    </style>
+
+    <div class="container">
+        <h1>Welcome to the HOD Dashboard</h1>
+
+        <!-- Display HOD information -->
+        <h2>Welcome, {{ hod.name }}!</h2>
+        <p>Department: {{ hod.department.name }}</p>
+
+        <!-- Example Button -->
+
+    </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'hodindex.html' %} 
+{% block content %}
+    <style>
+        /* CSS Styles */
+        body {
+            background-color: #f4f4f4; /* Light grey background color */
+            font-family: 'Arial', sans-serif; /* Font family */
+            padding: 20px; /* Add padding to the body */
+        }
+
+        .container {
+            max-width: 800px; /* Limit width of content */
+            margin: 0 auto; /* Center content horizontally */
+            background-color: #fff; /* White background color */
+            padding: 30px; /* Add padding inside container */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        h1 {
+            color: #333; /* Dark grey color for headings */
+            text-align: center; /* Center-align heading */
+            margin-bottom: 20px; /* Add space below heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+        }
+
+        h2 {
+            color: #0066cc; /* Blue color for HOD's name */
+            text-align: center; /* Center-align HOD's name */
+            margin-top: 30px; /* Add space above HOD's name */
+        }
+
+        p {
+            color: #666; /* Medium grey color for text */
+            text-align: center; /* Center-align text */
+        }
+
+        h3 {
+            color: #ff6600; /* Orange color for faculty members heading */
+            margin-top: 30px; /* Add space above faculty members heading */
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%; /* Make table fill container width */
+            border-collapse: collapse; /* Collapse table borders */
+            margin-top: 20px; /* Add space above the table */
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Add borders to table cells */
+            padding: 8px; /* Add padding to table cells */
+            text-align: left; /* Left-align text in cells */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light grey background color for table header */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Alternate row background color */
+        }
+
+        tr:hover {
+            background-color: #f2f2f2; /* Hover effect for rows */
+        }
+    </style>
+
+    <div class="container">
+        <h1>Welcome to the HOD Dashboard</h1>
+
+        <!-- Display HOD information -->
+        <h2>Welcome, {{ hod.name }}!</h2>
+        <p>Department: {{ hod.department.name }}</p>
+
+        <!-- Display faculty members in the same department -->
+        <h3>Faculty Members in {{ hod.department.name }} Department:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Faculty Name</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for faculty in hod.department.faculty.all %}
+                    <tr>
+                        <td>{{ faculty.name }}</td>
+                        <td>{{ faculty.subject }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
